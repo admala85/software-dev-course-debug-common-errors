@@ -24,24 +24,29 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
+// The above console.log statement is missing a closing parenthesis and a closing quotation mark. This results in a syntax error, preventing the code from running.
 
+// Fixed Code:
+// console.log("Welcome to the bootcamp");
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
 // What’s Wrong?
+// The code crashes at runtime because it tries to multiply a string ("eight") by 2, which is not a valid operation. This results in a runtime error when the loop reaches that element.
 
-
+// Fixed Code:
+// let numbers = [2, 4, 8];
 
 // Program C (Logic Error)
 // Description:
@@ -51,12 +56,13 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return false;  // Supposed to indicate num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
-}
+  return true; // Supposed to indicate num IS prime
 
+}
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+// The logic in the isPrime function is inverted. It returns true when it finds a divisor, which is the opposite of what it should do to correctly identify prime numbers. This results in incorrect outputs for certain inputs like 7, which is a prime number but is incorrectly marked as not prime.
